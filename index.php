@@ -47,7 +47,7 @@
 
                 $row = $query -> fetch();
                 header("Content-Type:" . $row["file_type"]);
-                echo $row["file_data"];
+                echo $row["file_binaries"];
             }
         }
     ?>
