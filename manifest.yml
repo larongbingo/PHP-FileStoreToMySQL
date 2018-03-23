@@ -6,7 +6,7 @@ applications:
   name: LibrarySystems - File Transfer
   host: LibrarySystems-File-Transfer
   disk_quota: 1024M
-  modules: 
+  dependencies:
   - mysqli
   - mysql
   - pdo
