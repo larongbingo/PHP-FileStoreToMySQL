@@ -1,6 +1,4 @@
-
-
-    <?php 
+<?php 
         if(isset($_GET["action"])) {
             $DB_HOSTNAME = getenv("DB_HOSTNAME");
             $DB_USERNAME = getenv("DB_USERNAME");
