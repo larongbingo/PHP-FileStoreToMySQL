@@ -1,12 +1,5 @@
-applications:
-- path: .
-  memory: 512M
-  instances: 1
-  domain: mybluemix.net
-  name: LibrarySystems - File Transfer
-  host: LibrarySystems-File-Transfer
-  disk_quota: 1024M
-  dependencies:
+language: php
+dependencies:
   - mysqli
   - mysql
   - pdo
@@ -15,3 +8,12 @@ applications:
   - pdo_odbc
   - pdo_pgsql
   - pdo_sqlite
+applications:
+- path: .
+  memory: 512M
+  instances: 1
+  domain: mybluemix.net
+  name: LibrarySystems - File Transfer
+  host: LibrarySystems-File-Transfer
+  disk_quota: 1024M
+  
