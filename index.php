@@ -46,8 +46,8 @@
                 $query -> execute();
 
                 $row = $query -> fetch();
-                header("Content-Type:" . $row["type"]);
-                echo $row["data"];
+                header("Content-Type:" . $row["file_type"]);
+                echo $row["file_data"];
             }
         }
     ?>
