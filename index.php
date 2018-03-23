@@ -7,11 +7,13 @@
     <title>File Upload</title>
 </head>
 <body>
-    <form action="/?action=upload" enctype="multipart/form-data" method="post">
-        <input type="text" name="thesis_title"><br>
-        <input type="file" name="thesis" id="thesis"><br>
-        <button name="submit">Upload</button>
-    </form>
+    <!-- 
+        <form action="/?action=upload" enctype="multipart/form-data" method="post">
+            <input type="text" name="thesis_title"><br>
+            <input type="file" name="thesis" id="thesis"><br>
+            <button name="submit">Upload</button>
+        </form>
+    -->
 
     <?php 
         if(isset($_GET["action"])) {
@@ -50,6 +52,19 @@
                 else {
                     echo "{success: false}";
                 }
+            }
+            else if($_GET["action"] == "download") {
+                $id = $_POST["thesis_id"];
+
+                $query = $DB -> prepare("SELECT * FROM files WHERE id=?");
+
+                $query -> bindParam(1, $id);
+
+                $query -> execute();
+
+                $row = $query -> fetch();
+                header("Content-Type:" . $row["type"]);
+                echo $row["data"];
             }
         }
     ?>
