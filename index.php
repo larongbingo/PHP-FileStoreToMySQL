@@ -37,7 +37,7 @@
                 }
             }
             else if($_GET["action"] == "download") {
-                $id = $_POST["thesis_id"];
+                $id = $_GET["thesis_id"];
 
                 $query = $DB -> prepare("SELECT * FROM files WHERE id=?");
 
