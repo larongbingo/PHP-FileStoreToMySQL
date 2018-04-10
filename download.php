@@ -12,7 +12,7 @@
         echo "Error at connection: " . $e -> getMessage();
     }
 
-    $id = $_POST["thesis_id"];
+    $id = $_GET["thesis_id"];
 
     $query = $DB -> prepare("SELECT * FROM files WHERE id=?");
 
