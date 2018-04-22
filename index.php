@@ -30,10 +30,10 @@
                 $result = $query -> execute();
 
                 if($result) {
-                    echo "{'success': true}";
+                    echo `{"success": true}`;
                 }
                 else {
-                    echo "{'success': false}";
+                    echo `{"success": false}`;
                 }
             }
             else if($_GET["action"] == "download") {
