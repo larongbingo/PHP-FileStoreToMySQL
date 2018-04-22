@@ -21,6 +21,7 @@
     $query -> execute();
 
     $row = $query -> fetch();
+    header("Access-Control-Allow-Origin: *");
     header("Content-Type:" . $row["file_type"]);
     echo $row["file_binaries"];
 ?>
