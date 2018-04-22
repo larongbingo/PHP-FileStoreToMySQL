@@ -27,6 +27,8 @@
 
     $result = $query -> execute();
 
+    header("Access-Control-Allow-Origin: *");
+
     if($result) {
         echo "{success: true}";
     }
