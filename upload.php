@@ -18,6 +18,10 @@
     $type = $_FILES["thesis"]["type"];
     $data = file_get_contents($_FILES["thesis"]["tmp_name"]);
 
+    if($type === "application/pdf") {
+        echo '{"success": false}';
+    }
+
     $query = $DB -> prepare("INSERT INTO files VALUES (DEFAULT, ?, ?, ?, ?, NOW(), NOW())");
 
     $query -> bindParam(1, $title);
